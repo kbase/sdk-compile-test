@@ -1,0 +1,31 @@
+# Development
+__pycache__
+.vscode
+deploy.cfg
+lib/SampleService/SampleServiceImpl.py.bak*
+test/test.cfg.bak
+/_temp
+.mypy_cache
+.pytest_cache
+
+# Testing
+test/test.cfg
+test_local
+.coverage
+test/test_temp/
+test/bin/jars
+test/bin/mongo
+test/bin/arangodb
+test/bin/kafka
+test/bin/temp
+htmlcov/
+cov_profile.lcov
+temp_test_dir
+mongo.log
+
+# IDE
+.vscode
+.idea
+
+# OS
+.DS_Store
