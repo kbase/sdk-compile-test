@@ -50,8 +50,12 @@ jobs:
       - name: Run kb-sdk compile
         run: |
           cd $GITHUB_WORKSPACE;
-          if [ -f *.spec ] && [ -f Makefile ] ; then
-            kb-sdk compile;
+          if [ -f kbase.yml ] && [ -f Makefile ] && [ -f *.spec ] ; then
+            for f in ./*.spec; do
+              kb-sdk compile "$f";
+            done
+          else
+            echo "Not a kb-sdk dependent app, skipping."
           fi
 
       - name: Build and push
