@@ -18,7 +18,7 @@ jobs:
       release_tag: '${{ github.event.release.tag_name }}'
   build-push:
     needs: validate-release-tag
-    uses: kbase/.github/.github/workflows/reusable_build-push.yml@main
+    uses: ./.github/workflows/reusable_build-push.yml
     with:
       name: '${{ github.event.repository.name }}'
       tags: '${{ github.event.release.tag_name }},latest'
