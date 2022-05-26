@@ -50,7 +50,7 @@ jobs:
       - name: Run kb-sdk compile
         run: |
           docker pull docker.io/kbase/kb-sdk:latest;
-          docker run kbase/kb-sdk genscript > /usr/local/bin/kb-sdk;
+          docker run -t kbase/kb-sdk genscript > /usr/local/bin/kb-sdk;
           chmod +x /usr/local/bin/kb-sdk;
           cd $GITHUB_WORKSPACE; 
           kb-sdk compile
