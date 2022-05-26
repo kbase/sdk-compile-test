@@ -47,7 +47,14 @@ jobs:
               return `ghcr.io/${username}/${repoName}:${tag}`;
             }).join(',');
 
+      - name: Check file existence
+        id: check_files
+        uses: andstor/file-existence-action@v1
+        with:
+          files: "kbase.yml, Makefile, *.spec"
+
       - name: Run kb-sdk compile
+        if: steps.check_files.outputs.files_exists == 'true'
         run: |
           cd $GITHUB_WORKSPACE;
           if [ -f kbase.yml ] && [ -f Makefile ] && [ -f *.spec ] ; then
