@@ -48,7 +48,7 @@ jobs:
             }).join(',');
 
       - name: Run kb-sdk compile
-        run: docker pull kbase/kb-sdk && cd $GITHUB_WORKSPACE && docker run kb-sdk compile
+        run: docker pull docker.io/kbase/kb-sdk:latest; cd $GITHUB_WORKSPACE; docker run kb-sdk compile
 
       - name: Build and push
         uses: docker/build-push-action@v2
