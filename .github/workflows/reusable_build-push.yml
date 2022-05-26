@@ -51,10 +51,7 @@ jobs:
         run: |
           cd $GITHUB_WORKSPACE;
           if [ -f kbase.yml ] && [ -f Makefile ] && [ -f *.spec ] ; then
-            make compile;
-#            for f in ./*.spec; do
-#              kb-sdk compile "$f";
-#            done
+            make compile
           else
             echo "Not a kb-sdk dependent app, skipping."
           fi
