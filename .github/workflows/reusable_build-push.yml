@@ -24,7 +24,7 @@ jobs:
         run: echo "::set-output name=date::$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
 
       - name: Run kb-sdk compile
-        run: docker pull kb-sdk:latest && cd && docker run kb-sdk compile
+        run: docker pull kbase/kb-sdk:latest && cd $GITHUB_WORKSPACE && docker run kb-sdk compile
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
