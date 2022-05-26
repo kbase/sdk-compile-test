@@ -47,14 +47,13 @@ jobs:
               return `ghcr.io/${username}/${repoName}:${tag}`;
             }).join(',');
 
-      - name: Run kb-sdk compile
+      - name: kb-sdk compile
+        shell: bash
         run: |
-          cd $GITHUB_WORKSPACE;
-          if [ -f kbase.yml ] && [ -f Makefile ] && [ -f *.spec ] ; then
-            make compile
-          else
-            echo "Not a kb-sdk dependent app, skipping."
-          fi
+            cd $GITHUB_WORKSPACE;
+            if [ -f *.spec ] && [ -f Makefile ] ; then
+              make compile;
+            fi
 
       - name: Build and push
         uses: docker/build-push-action@v2
