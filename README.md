@@ -1,4 +1,4 @@
-# Sample Service  
+## Sample Service  
 
 [![tests](https://github.com/kbase/sample_service/actions/workflows/non_sdk_test.yml/badge.svg)](https://github.com/kbase/sample_service/actions/workflows/non_sdk_test.yml)
 [![Coverage Status](https://coveralls.io/repos/github/kbase/sample_service/badge.svg?branch=master)](https://coveralls.io/github/kbase/sample_service?branch=master)
